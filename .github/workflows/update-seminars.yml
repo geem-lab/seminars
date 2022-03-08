@@ -15,7 +15,7 @@ jobs:
 
       - name: Setup
         run: |
-          pip install dateutil
+          pip install python-dateutil  # Yes, it is different from the import name
           mkdir -p build/
           
       - name: Build
