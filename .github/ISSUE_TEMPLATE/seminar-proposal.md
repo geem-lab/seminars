@@ -1,7 +1,7 @@
 ---
 name: Seminar proposal
 about: Propose a group seminar
-title: ''
+title: "[SEMINAR]"
 labels: seminar
 assignees: ''
 
