@@ -1,0 +1,11 @@
+name: Update seminars
+on:
+  issues:
+    types: [opened, edited]
+jobs:
+  update-seminars:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+        mkdir -p build/
+        python3 scripts/update-seminars.py > build/index.md
