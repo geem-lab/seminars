@@ -7,10 +7,13 @@ assignees: ''
 
 ---
 
-# Title of the seminar
+A short description goes here if you'd like (references are welcome).
 
-*Insert the seminar title here.*
+---
 
-## Things to do right now
+**Things to do:**
 
-Please assign the speaker (probably yourself).
+- [ ] Insert the **seminar title** (title bar above).
+- [ ] Insert a **short description** if you'd like (this text area).
+- [ ] If possible, assign the **speaker** (probably *yourself*, right sidebar).
+- [ ] If possible, assign a **due date** (when it will take place, right sidebar).
