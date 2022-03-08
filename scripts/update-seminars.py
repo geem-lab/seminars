@@ -1,11 +1,32 @@
 import os
 from dataclasses import dataclass
 from datetime import datetime
-from textwrap import dedent
 
 import requests
 from dateutil import parser as dateutil_parser
 from markdown import markdown
+
+
+def tag(tag_name):
+    def _tag(*args, **kwargs):
+        attrs = " ".join(f'{k}="{v}"' for k, v in kwargs.items())
+        contents = "".join(args)
+        if attrs:
+            return f"<{tag_name} {attrs}>{contents}</{tag_name}>"
+        else:
+            return f"<{tag_name}>{contents}</{tag_name}>"
+
+    return _tag
+
+
+em = tag("em")
+time = tag("time")
+h2 = tag("h2")
+p = tag("p")
+strong = tag("strong")
+a = tag("a")
+details = tag("details")
+summary = tag("summary")
 
 
 @dataclass
@@ -16,57 +37,28 @@ class Seminar:
     date: datetime
 
     def _date_to_markdown(self):
-        return dedent(
-            f"""
-            <em>
-                <time datetime="{self.date.isoformat()}">
-                    {self.date.strftime('%d/%m/%Y')}
-                <time>
-            </em>
-            """
-        )
+        return em(time(self.date.strftime("%d/%m/%Y"), datetime=self.date.isoformat()))
 
     def _title_to_markdown(self):
-        return dedent(
-            f"""
-            <h2 style="display: inline;">
-                {self.title}
-            </h2>
-            """
-        )
+        return h2(self.title, style="display: inline")
 
     def _speaker_to_markdown(self):
-        return dedent(
-            f"""
-            <p>
-                <strong>
-                    <a href="https://github.com/{self.speaker}">
-                        {self.speaker}
-                    </a>
-                </strong>
-            </p>
-            """
+        return p(
+            strong("Speaker: "),
+            a(self.speaker, href=f"https://github.com/{self.speaker}"),
         )
 
     def _description_to_markdown(self):
-        return dedent(
-            f"""
-            {markdown(self.description)}
-            """
-        )
+        return markdown(self.description)
 
     def to_markdown(self):
-        return dedent(
-            f"""
-            <details>
-                <summary>
-                    {self._date_to_markdown()}
-                    {self._title_to_markdown()}
-                </summary>
-                {self._speaker_to_markdown()}
-                {self._description_to_markdown()}
-            </details>
-            """
+        return details(
+            summary(
+                self._date_to_markdown(),
+                self._title_to_markdown(),
+                self._speaker_to_markdown(),
+            ),
+            self._description_to_markdown(),
         )
 
     DATE_MARKER = "**Date**:"
