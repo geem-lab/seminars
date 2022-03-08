@@ -93,9 +93,9 @@ class Seminar:
             summary(
                 self._title_to_markdown(),
                 " (",
-                self._date_to_markdown(),
-                ", ",
                 self._speaker_to_markdown(),
+                ", ",
+                self._date_to_markdown(),
                 ")",
             ),
             self._description_to_markdown(),
