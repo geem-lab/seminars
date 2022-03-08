@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from datetime import datetime
 
 import requests
-from dateutil import parser as dateutil_parser
+import dateparser
 from markdown import markdown
 
 
@@ -27,6 +27,10 @@ strong = tag("strong")
 a = tag("a")
 details = tag("details")
 summary = tag("summary")
+span = tag("span")
+li = tag("li")
+ul = tag("ul")
+small = tag("small")
 
 
 @dataclass
@@ -36,17 +40,19 @@ class Seminar:
     description: str
     date: datetime
 
+    STRFTIME_FORMAT = "%b %-d %Y"
+
     def _date_to_markdown(self):
-        return em(time(self.date.strftime("%d/%m/%Y"), datetime=self.date.isoformat()))
+        dt = time(
+            self.date.strftime(self.STRFTIME_FORMAT), datetime=self.date.isoformat()
+        )
+        return small(f"{dt}")
 
     def _title_to_markdown(self):
-        return h2(self.title, style="display: inline")
+        return strong(self.title, style="display: inline")
 
     def _speaker_to_markdown(self):
-        return p(
-            strong("Speaker: "),
-            a(self.speaker, href=f"https://github.com/{self.speaker}"),
-        )
+        return a(f"@{self.speaker}", href=f"https://github.com/{self.speaker}")
 
     def _description_to_markdown(self):
         return markdown(self.description)
@@ -54,9 +60,12 @@ class Seminar:
     def to_markdown(self):
         return details(
             summary(
-                self._date_to_markdown(),
                 self._title_to_markdown(),
+                " (",
                 self._speaker_to_markdown(),
+                ", ",
+                self._date_to_markdown(),
+                ")",
             ),
             self._description_to_markdown(),
         )
@@ -71,7 +80,7 @@ class Seminar:
         description = description.rstrip(cls.DATE_MARKER).strip()
 
         date = date.splitlines()[0].strip()
-        date = dateutil_parser.parse(date)
+        date = dateparser.parse(date)
 
         if issue["assignees"]:
             speaker = issue["assignees"][0]["login"]
@@ -83,13 +92,26 @@ class Seminar:
 
 @dataclass
 class SeminarList:
-    seminars: list
+    seminars: list[Seminar]
 
     def __post_init__(self):
         self.seminars = sorted(self.seminars, key=lambda seminar: seminar.date)
 
+    HEADER = """# Seminars
+
+Click on each seminar to see more details.
+"""
+    FOOTER = """
+
+> Want to add a seminar? Take a look at [the instructions page](/README).
+    """
+
     def to_markdown(self):
-        return "\n".join([seminar.to_markdown() for seminar in self.seminars])
+        return (
+            self.HEADER
+            + "".join(seminar.to_markdown() for seminar in self.seminars)
+            + self.FOOTER
+        )
 
     @staticmethod
     def from_github_issues(issues):
