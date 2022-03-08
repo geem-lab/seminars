@@ -21,14 +21,14 @@ class Seminar:
                 {self.date.strftime('%d/%m/%Y')}
             </strong>
         </p>
-        """
+        """.strip()
 
     def _title_to_markdown(self):
         return f"""
         <h2>
             {self.title}
         </h2>
-        """
+        """.strip()
 
     def _speaker_to_markdown(self):
         return f"""
@@ -39,12 +39,12 @@ class Seminar:
                 </a>
             </strong>
         </p>
-        """
+        """.strip()
 
     def _description_to_markdown(self):
         return f"""
         {markdown(self.description)}
-        """
+        """.strip()
 
     def to_markdown(self):
         return f"""
@@ -56,7 +56,7 @@ class Seminar:
             {self._speaker_to_markdown()}
             {self._description_to_markdown()}
         </details>
-        """
+        """.strip()
 
     DATE_MARKER = "**Date**:"
 
