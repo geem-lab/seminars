@@ -58,6 +58,34 @@ class Seminar:
         </details>
         """
 
+    DATE_MARKER = "**Date**:"
+
+    @classmethod
+    def from_github_issue(cls, issue):
+        title = issue["title"].replace("[SEMINAR]", "").strip()
+
+        description, date = issue["body"].split(cls.DATE_MARKER)[:2]
+        description = description.rstrip(cls.DATE_MARKER).strip()
+
+        date = date.splitlines()[0].strip()
+        date = dateutil_parser.parse(date)
+
+        speaker = issue["assignees"][0]["login"]
+        # self.speaker = issue['user']['login']
+
+        return Seminar(title=title, speaker=speaker, description=description, date=date)
+
+
+@dataclass
+class SeminarList:
+    seminars: list
+
+    def __post_init__(self):
+        self.seminars = sorted(self.seminars, key=lambda seminar: seminar.date)
+
+    def to_markdown(self):
+        return "\n".join([seminar.to_markdown() for seminar in self.seminars])
+
 
 if __name__ == "__main__":
     token = os.environ["GITHUB_TOKEN"]
@@ -76,21 +104,11 @@ if __name__ == "__main__":
     gh_session.auth = (owner, token)
     issues = gh_session.get(query_url, headers=headers, params=params).json()
 
-    seminars = []
-    for issue in issues:
-        if issue["title"].startswith("[SEMINAR]"):
-            title = issue["title"].replace("[SEMINAR]", "").strip()
-
-            date_marker = "**Date**:"
-            body, date = issue["body"].split(date_marker)[:2]
-            body = body.rstrip(date_marker).strip()
-            date = date.splitlines()[0].strip()
-            date = dateutil_parser.parse(date)
-            speaker = issue["assignees"][0]["login"]
-
-            seminar = Seminar(title=title, speaker=speaker, description=body, date=date)
-            seminars.append(seminar)
-
-    seminars = sorted(seminars, key=lambda s: s.date)
-    for seminar in seminars:
-        print(seminar.to_markdown())
+    seminars = SeminarList(
+        seminars=[
+            Seminar.from_github_issue(issue)
+            for issue in issues
+            if issue["title"].startswith("[SEMINAR]")
+        ]
+    )
+    print(seminars.to_markdown())
