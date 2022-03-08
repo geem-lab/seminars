@@ -6,6 +6,5 @@ jobs:
   update-seminars:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-        mkdir -p build/
-        python3 scripts/update-seminars.py > build/index.md
+      - run: mkdir -p build/
+      - run: python3 scripts/update-seminars.py > build/index.md
