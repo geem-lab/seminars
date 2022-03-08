@@ -24,6 +24,7 @@ jobs:
         run: |
           mkdir -p build/
           cp README.md build/instructions.md
+          cp -r images build/
           
       - name: Build
         env:
