@@ -20,5 +20,6 @@ A short description goes here if you'd like (references are welcome).
 - [ ] I inserted a **short description** (in this text area above).
 - [ ] I edited the **date** (in this text area above).
 - [ ] I assigned the **speaker** (on the right sidebar).
+- [ ] I ticked those checkboxes either *after* or *while* creating the issue.
 
 > The **date** is when the seminar will take place. If you're unsure about the seminar **speaker**, it's probably *you*.
