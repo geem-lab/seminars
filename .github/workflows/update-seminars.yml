@@ -2,9 +2,19 @@ name: Update seminars
 on:
   issues:
     types: [opened, edited]
+  push:
+    branches:
+      - main
+  pull_request:
+
 jobs:
   update-seminars:
     runs-on: ubuntu-latest
     steps:
-      - run: mkdir -p build/
-      - run: python3 scripts/update-seminars.py > build/index.md
+      - uses: actions/checkout@v2
+
+      - name: Setup
+        run: mkdir -p build/
+          
+      - name: Build
+        run: python3 scripts/update-seminars.py > build/index.md
