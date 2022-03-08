@@ -16,16 +16,16 @@ class Seminar:
 
     def _date_to_markdown(self):
         return f"""
-        <p>
-            <strong>
+        <em>
+            <time datetime="{self.date.isoformat()}">
                 {self.date.strftime('%d/%m/%Y')}
-            </strong>
-        </p>
+            <time>
+        </em>
         """.strip()
 
     def _title_to_markdown(self):
         return f"""
-        <h2>
+        <h2 style="display: inline;">
             {self.title}
         </h2>
         """.strip()
@@ -70,8 +70,10 @@ class Seminar:
         date = date.splitlines()[0].strip()
         date = dateutil_parser.parse(date)
 
-        speaker = issue["assignees"][0]["login"]
-        # self.speaker = issue['user']['login']
+        if issue["assignees"]:
+            speaker = issue["assignees"][0]["login"]
+        else:
+            speaker = issue["user"]["login"]
 
         return Seminar(title=title, speaker=speaker, description=description, date=date)
 
