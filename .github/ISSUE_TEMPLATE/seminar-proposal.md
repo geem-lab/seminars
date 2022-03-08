@@ -11,9 +11,11 @@ A short description goes here if you'd like (references are welcome).
 
 ---
 
-**Things to do:**
+**Things to do and check:**
 
-- [ ] Insert the **seminar title** (title bar above).
-- [ ] Insert a **short description** if you'd like (this text area).
-- [ ] If possible, assign the **speaker** (probably *yourself*, right sidebar).
-- [ ] If possible, assign a **due date** (when it will take place, right sidebar).
+- [ ] I inserted the **seminar title** (in the title bar above).
+- [ ] I inserted a **short description** (in this text area).
+- [ ] I assigned the **speaker** (on the right sidebar).
+- [ ] I assigned a **due date** (on the right sidebar).
+
+> The **due date** is when the seminar will take place. If you're unsure about the seminar **speaker**, it's probably *yourself*.
