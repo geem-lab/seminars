@@ -1,6 +1,7 @@
 import os
 from dataclasses import dataclass
 from datetime import datetime
+from textwrap import dedent
 
 import requests
 from dateutil import parser as dateutil_parser
@@ -15,48 +16,58 @@ class Seminar:
     date: datetime
 
     def _date_to_markdown(self):
-        return f"""
-        <em>
-            <time datetime="{self.date.isoformat()}">
-                {self.date.strftime('%d/%m/%Y')}
-            <time>
-        </em>
-        """.strip()
+        return dedent(
+            f"""
+            <em>
+                <time datetime="{self.date.isoformat()}">
+                    {self.date.strftime('%d/%m/%Y')}
+                <time>
+            </em>
+            """
+        )
 
     def _title_to_markdown(self):
-        return f"""
-        <h2 style="display: inline;">
-            {self.title}
-        </h2>
-        """.strip()
+        return dedent(
+            f"""
+            <h2 style="display: inline;">
+                {self.title}
+            </h2>
+            """
+        )
 
     def _speaker_to_markdown(self):
-        return f"""
-        <p>
-            <strong>
-                <a href="https://github.com/{self.speaker}">
-                    {self.speaker}
-                </a>
-            </strong>
-        </p>
-        """.strip()
+        return dedent(
+            f"""
+            <p>
+                <strong>
+                    <a href="https://github.com/{self.speaker}">
+                        {self.speaker}
+                    </a>
+                </strong>
+            </p>
+            """
+        )
 
     def _description_to_markdown(self):
-        return f"""
-        {markdown(self.description)}
-        """.strip()
+        return dedent(
+            f"""
+            {markdown(self.description)}
+            """
+        )
 
     def to_markdown(self):
-        return f"""
-        <details>
-            <summary>
-                {self._date_to_markdown()}
-                {self._title_to_markdown()}
-            </summary>
-            {self._speaker_to_markdown()}
-            {self._description_to_markdown()}
-        </details>
-        """.strip()
+        return dedent(
+            f"""
+            <details>
+                <summary>
+                    {self._date_to_markdown()}
+                    {self._title_to_markdown()}
+                </summary>
+                {self._speaker_to_markdown()}
+                {self._description_to_markdown()}
+            </details>
+            """
+        )
 
     DATE_MARKER = "**Date**:"
 
