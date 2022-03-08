@@ -102,18 +102,12 @@ class SeminarList:
     HEADER = """# Seminars
 
 Click on each seminar to see more details.
-"""
-    FOOTER = """
 
-> Want to add a seminar? Take a look at [the instructions page](/README).
-    """
+> Want to add a seminar? Take a look at [the instructions page](/seminars/instructions).
+"""
 
     def to_markdown(self):
-        return (
-            self.HEADER
-            + "".join(seminar.to_markdown() for seminar in self.seminars)
-            + self.FOOTER
-        )
+        return self.HEADER + "".join(seminar.to_markdown() for seminar in self.seminars)
 
     @staticmethod
     def from_github_issues(issues):
