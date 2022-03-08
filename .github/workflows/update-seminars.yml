@@ -23,6 +23,7 @@ jobs:
       - name: Setup
         run: |
           mkdir -p build/
+          cp README.md build/
           
       - name: Build
         env:
