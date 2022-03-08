@@ -86,29 +86,38 @@ class SeminarList:
     def to_markdown(self):
         return "\n".join([seminar.to_markdown() for seminar in self.seminars])
 
-
-if __name__ == "__main__":
-    token = os.environ["GITHUB_TOKEN"]
-    owner = "geem-lab"
-    repo = "seminars"
-    query_url = f"https://api.github.com/repos/{owner}/{repo}/issues"
-    authorization = f"token {token}"
-
-    params = {}  # {"state": "open"}
-    headers = {
-        "Accept": "application/vnd.github.v3+json",
-        "Authorization": authorization,
-    }
-
-    gh_session = requests.Session()
-    gh_session.auth = (owner, token)
-    issues = gh_session.get(query_url, headers=headers, params=params).json()
-
-    seminars = SeminarList(
-        seminars=[
+    @staticmethod
+    def from_github_issues(issues):
+        seminars = [
             Seminar.from_github_issue(issue)
             for issue in issues
             if issue["title"].startswith("[SEMINAR]")
         ]
-    )
+
+        return SeminarList(seminars)
+
+    @staticmethod
+    def from_github_repo(owner, repo, token=None):
+        if token is None:
+            token = os.environ["GITHUB_TOKEN"]
+
+        gh_session = requests.Session()
+        gh_session.auth = (owner, token)
+
+        params = {}  # {"state": "open"}
+
+        authorization = f"token {token}"
+        headers = {
+            "Accept": "application/vnd.github.v3+json",
+            "Authorization": authorization,
+        }
+
+        query_url = f"https://api.github.com/repos/{owner}/{repo}/issues"
+        issues = gh_session.get(query_url, headers=headers, params=params).json()
+
+        return SeminarList.from_github_issues(issues)
+
+
+if __name__ == "__main__":
+    seminars = SeminarList.from_github_repo(owner="geem-lab", repo="seminars")
     print(seminars.to_markdown())
