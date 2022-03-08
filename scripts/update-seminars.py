@@ -72,7 +72,7 @@ class Seminar:
         dt = time(
             self.date.strftime(self.STRFTIME_FORMAT), datetime=self.date.isoformat()
         )
-        return strong(dt)
+        return small(strong(dt))
 
     def _title_to_markdown(self):
         return em(self.title)
