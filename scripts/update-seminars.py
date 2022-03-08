@@ -4,9 +4,27 @@ import os
 from dataclasses import dataclass
 from datetime import datetime
 
-import requests
 import dateparser
+import requests
 from markdown import markdown
+
+
+def request_github_api(query_url: str, owner="geem-lab", token=None) -> dict:
+    if token is None:
+        token = os.environ["GITHUB_TOKEN"]
+
+    gh_session = requests.Session()
+    gh_session.auth = (owner, token)
+
+    params = {}  # {"state": "open"}
+
+    authorization = f"token {token}"
+    headers = {
+        "Accept": "application/vnd.github.v3+json",
+        "Authorization": authorization,
+    }
+
+    return gh_session.get(query_url, headers=headers, params=params).json()
 
 
 def tag(tag_name):
@@ -38,23 +56,34 @@ small = tag("small")
 @dataclass
 class Seminar:
     title: str
-    speaker: str
+    speaker: dict
     description: str
     date: datetime
 
     STRFTIME_FORMAT = "%b %-d %Y"
 
+    def __post_init__(self):
+        if isinstance(self.speaker, str):
+            self.speaker = request_github_api(
+                f"https://api.github.com/users/{self.speaker}"
+            )
+
     def _date_to_markdown(self):
         dt = time(
             self.date.strftime(self.STRFTIME_FORMAT), datetime=self.date.isoformat()
         )
-        return small(f"{dt}")
+        return strong(dt)
 
     def _title_to_markdown(self):
-        return strong(self.title, style="display: inline")
+        return em(self.title)
 
     def _speaker_to_markdown(self):
-        return a(f"@{self.speaker}", href=f"https://github.com/{self.speaker}")
+        if "name" in self.speaker:
+            name = self.speaker["name"]
+        else:
+            name = self.speaker["login"]
+
+        return a(name, href=f"https://github.com/{self.speaker['login']}")
 
     def _description_to_markdown(self):
         return markdown(self.description)
@@ -64,9 +93,9 @@ class Seminar:
             summary(
                 self._title_to_markdown(),
                 " (",
-                self._speaker_to_markdown(),
-                ", ",
                 self._date_to_markdown(),
+                ", ",
+                self._speaker_to_markdown(),
                 ")",
             ),
             self._description_to_markdown(),
@@ -121,23 +150,11 @@ Click on each seminar to see more details.
 
     @staticmethod
     def from_github_repo(owner, repo, token=None):
-        if token is None:
-            token = os.environ["GITHUB_TOKEN"]
-
-        gh_session = requests.Session()
-        gh_session.auth = (owner, token)
-
-        params = {}  # {"state": "open"}
-
-        authorization = f"token {token}"
-        headers = {
-            "Accept": "application/vnd.github.v3+json",
-            "Authorization": authorization,
-        }
-
-        query_url = f"https://api.github.com/repos/{owner}/{repo}/issues"
-        issues = gh_session.get(query_url, headers=headers, params=params).json()
-
+        issues = request_github_api(
+            f"https://api.github.com/repos/{owner}/{repo}/issues",
+            owner=owner,
+            token=token,
+        )
         return SeminarList.from_github_issues(issues)
 
 
