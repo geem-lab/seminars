@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-A short description goes here if you'd like (references are welcome).
+A short description goes here if you'd like. References, links to slides, or software are most welcome!
 
 **Date**: 2022-12-31
 
