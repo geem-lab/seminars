@@ -14,8 +14,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Setup
-        run: pip install dateutil
-        run: mkdir -p build/
+        run: |
+          pip install dateutil
+          mkdir -p build/
           
       - name: Build
         run: python3 scripts/update-seminars.py > build/index.md
