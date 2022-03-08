@@ -1,6 +1,4 @@
-# seminars
-
-Group seminars.
+# [GEEM lab group](https://geem-ufsc.org/) seminars
 
 ## How to add a new seminar
 
