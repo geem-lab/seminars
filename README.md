@@ -1,0 +1,2 @@
+# seminars
+Group seminars
