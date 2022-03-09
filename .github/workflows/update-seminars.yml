@@ -1,7 +1,7 @@
 name: Update seminars
 on:
   issues:
-    types: [opened, edited]
+    types: [opened, edited, deleted]
   push:
     branches:
       - main
