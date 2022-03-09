@@ -36,10 +36,15 @@ def tag(tag_name):
 
         attrs = " ".join(f'{_normalize_key(k)}="{v}"' for k, v in kwargs.items())
         contents = "".join(arg for arg in args if arg)
-        if attrs:
+
+        if attrs and contents:
             return f"<{tag_name} {attrs}>{contents}</{tag_name}>"
-        else:
+        elif attrs:
+            return f"<{tag_name} {attrs} />"
+        elif contents:
             return f"<{tag_name}>{contents}</{tag_name}>"
+        else:
+            return f"<{tag_name} />"
 
     return _tag
 
