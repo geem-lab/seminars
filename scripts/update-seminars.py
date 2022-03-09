@@ -29,8 +29,13 @@ def request_github_api(query_url: str, owner="geem-lab", token=None) -> dict:
 
 def tag(tag_name):
     def _tag(*args, **kwargs):
-        attrs = " ".join(f'{k}="{v}"' for k, v in kwargs.items())
-        contents = "".join(args)
+        def _normalize_key(key):
+            if key.endswith("_"):
+                return key[:-1]
+            return key
+
+        attrs = " ".join(f'{_normalize_key(k)}="{v}"' for k, v in kwargs.items())
+        contents = "".join(arg for arg in args if arg)
         if attrs:
             return f"<{tag_name} {attrs}>{contents}</{tag_name}>"
         else:
@@ -51,6 +56,7 @@ span = tag("span")
 li = tag("li")
 ul = tag("ul")
 small = tag("small")
+img = tag("img")
 
 
 @dataclass
@@ -77,13 +83,34 @@ class Seminar:
     def _title_to_markdown(self):
         return em(self.title)
 
-    def _speaker_to_markdown(self):
+    @property
+    def speaker_name(self):
         if "name" in self.speaker:
-            name = self.speaker["name"]
+            return self.speaker["name"]
         else:
-            name = self.speaker["login"]
+            return f"@{self.speaker['login']}"
 
-        return a(name, href=f"https://github.com/{self.speaker['login']}")
+    @property
+    def speaker_url(self):
+        return f"https://github.com/{self.speaker['login']}"
+
+    def _speaker_name_to_markdown(self):
+        return a(self.speaker_name, href=self.speaker_url)
+
+    AVATAR_WIDTH = 128
+
+    def _speaker_avatar_to_markdown(self):
+        if "avatar_url" in self.speaker:
+            return a(
+                img(
+                    src=self.speaker["avatar_url"],
+                    alt=self.speaker["login"],
+                    title=self.speaker_name,
+                    align="left",
+                    width=self.AVATAR_WIDTH,
+                ),
+                href=self.speaker_url,
+            )
 
     def _description_to_markdown(self):
         return markdown(self.description)
@@ -93,11 +120,12 @@ class Seminar:
             summary(
                 self._title_to_markdown(),
                 " (",
-                self._speaker_to_markdown(),
+                self._speaker_name_to_markdown(),
                 ", ",
                 self._date_to_markdown(),
                 ")",
             ),
+            self._speaker_avatar_to_markdown(),
             self._description_to_markdown(),
         )
 
@@ -133,6 +161,7 @@ class SeminarList:
 Click on each seminar to see more details.
 
 > Want to add a seminar? Take a look at [the instructions page](/seminars/instructions).
+
 """
 
     def to_markdown(self):
