@@ -81,7 +81,9 @@ class Seminar:
 
     def _date_to_markdown(self):
         dt = time(
-            self.date.strftime(self.STRFTIME_FORMAT), datetime=self.date.isoformat()
+            "📅 ",
+            self.date.strftime(self.STRFTIME_FORMAT),
+            datetime=self.date.isoformat(),
         )
         return small(strong(dt))
 
@@ -123,11 +125,11 @@ class Seminar:
     def to_markdown(self):
         return details(
             summary(
+                self._date_to_markdown(),
+                " ",
                 self._title_to_markdown(),
                 " (",
                 self._speaker_name_to_markdown(),
-                ", ",
-                self._date_to_markdown(),
                 ")",
             ),
             self._speaker_avatar_to_markdown(),
