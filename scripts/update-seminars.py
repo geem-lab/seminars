@@ -161,7 +161,9 @@ class SeminarList:
     seminars: list[Seminar]
 
     def __post_init__(self):
-        self.seminars = sorted(self.seminars, key=lambda seminar: seminar.date)
+        self.seminars = sorted(
+            self.seminars, key=lambda seminar: seminar.date, reverse=True
+        )
 
     HEADER = """# Seminars
 
