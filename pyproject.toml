@@ -12,6 +12,7 @@ Markdown = "^3.3.6"
 dateparser = "^1.1.0"
 
 [tool.poetry.dev-dependencies]
+grip = "^4.6.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
