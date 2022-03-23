@@ -16,7 +16,7 @@ def request_github_api(query_url: str, owner="geem-lab", token=None) -> dict:
     gh_session = requests.Session()
     gh_session.auth = (owner, token)
 
-    params = {}  # {"state": "open"}
+    params = {"state": "all"}
 
     authorization = f"token {token}"
     headers = {
