@@ -2,7 +2,7 @@
 name = "seminars"
 version = "0.1.0"
 description = "GEEM lab group seminars"
-authors = ["Felipe S. S. Schneider <schneider.felipe.5@gmail.com>"]
+authors = ["Felipe S. S. Schneider <schneider.felipe.5@gmail.com>", "Letícia Maria Pequeno Madureira <leticiapequeno30@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
