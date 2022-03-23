@@ -1,9 +1,10 @@
 from __future__ import annotations
 
+import calendar
 import os
 from dataclasses import dataclass
 from datetime import datetime
-import calendar
+
 import dateparser
 import requests
 from markdown import markdown
@@ -165,19 +166,47 @@ class SeminarList:
             self.seminars, key=lambda seminar: seminar.date, reverse=True
         )
 
+    HEADER = "Click on each seminar to see more details."
+
+    BEGIN_UPCOMING_SEMINARS = """
+
+## Upcoming Seminars
+
+"""
+    END_UPCOMING_SEMINARS = """
     
-    HEADER = """# Seminars
-
-Click on each seminar to see more details.
-
-> Want to add a seminar? Check if the date of interest is available and take a look at [the instructions page](/seminars/instructions).
+> Want to add *your* seminar? Check if the date of interest is available and take a look at [the instructions page](/seminars/instructions).
 
 """
 
-    CALENDAR = calendar.HTMLCalendar().formatmonth(datetime.today().year, datetime.today().month)
+    BEGIN_PAST_SEMINARS = """
+    
+## Past Seminars
+
+"""
+
+    END_PAST_SEMINARS = ""
+
+    CALENDAR = calendar.HTMLCalendar().formatmonth(
+        datetime.today().year, datetime.today().month
+    )
 
     def to_markdown(self):
-        return self.HEADER + "".join(seminar.to_markdown() for seminar in self.seminars)
+        next_seminars = filter(
+            lambda seminar: seminar.date >= datetime.today(), self.seminars
+        )
+        past_seminars = filter(
+            lambda seminar: seminar.date < datetime.today(), self.seminars
+        )
+        return (
+            self.HEADER
+            + self.BEGIN_UPCOMING_SEMINARS
+            + "".join(seminar.to_markdown() for seminar in next_seminars)
+            + self.END_UPCOMING_SEMINARS
+            + self.BEGIN_PAST_SEMINARS
+            + "".join(seminar.to_markdown() for seminar in past_seminars)
+            + self.END_PAST_SEMINARS
+        )
 
     @staticmethod
     def from_github_issues(issues):
