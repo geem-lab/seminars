@@ -1,4 +1,3 @@
-<IPython.core.display.HTML object>
 # Seminars
 
 Click on each seminar to see more details.
