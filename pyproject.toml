@@ -10,7 +10,6 @@ python = "^3.8"
 requests = "^2.27.1"
 Markdown = "^3.3.6"
 dateparser = "^1.1.0"
-ipython = "^8.1.1"
 
 [tool.poetry.dev-dependencies]
 grip = "^4.6.0"
