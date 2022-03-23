@@ -9,6 +9,7 @@
 3. Choose ["Seminar proposal"][proposal-template].
    ![new-seminar](images/new-seminar.png)
 4. Follow the instructions and tick the boxes.
+5. **After the seminar, don't forget to close the issue**.
 
 [proposal-template]: https://github.com/geem-lab/seminars/issues/new?assignees=&labels=seminar&template=seminar-proposal.md&title=%5BSEMINAR%5D+
 
