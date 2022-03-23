@@ -173,14 +173,14 @@ class SeminarList:
 ## Upcoming Seminars
 
 """
-    END_UPCOMING_SEMINARS = """
-    
+    END_UPCOMING_SEMINARS = """<br/>
+
 > Want to add *your* seminar? Check if the date of interest is available and take a look at [the instructions page](/seminars/instructions).
 
 """
 
     BEGIN_PAST_SEMINARS = """
-    
+
 ## Past Seminars
 
 """
