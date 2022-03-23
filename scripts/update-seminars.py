@@ -169,9 +169,10 @@ class SeminarList:
 
 Click on each seminar to see more details.
 
-> Want to add a seminar? Take a look at [the instructions page](/seminars/instructions).
+> Want to add a seminar? Check if the date of interest is available and take a look at [the instructions page](/seminars/instructions).
 
 """
+
 
     def to_markdown(self):
         return self.HEADER + "".join(seminar.to_markdown() for seminar in self.seminars)
