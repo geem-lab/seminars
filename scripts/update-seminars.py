@@ -202,5 +202,4 @@ Click on each seminar to see more details.
 
 if __name__ == "__main__":
     seminars = SeminarList.from_github_repo(owner="geem-lab", repo="seminars")
-    display(HTML(SeminarList.CALENDAR))
     print(seminars.to_markdown())
