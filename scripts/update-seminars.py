@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass
 from datetime import datetime
+from IPython.display import display,HTML
 
 import dateparser
 import requests
@@ -165,6 +166,7 @@ class SeminarList:
             self.seminars, key=lambda seminar: seminar.date, reverse=True
         )
 
+    
     HEADER = """# Seminars
 
 Click on each seminar to see more details.
@@ -172,6 +174,7 @@ Click on each seminar to see more details.
 > Want to add a seminar? Check if the date of interest is available and take a look at [the instructions page](/seminars/instructions).
 
 """
+
 
 
     def to_markdown(self):
