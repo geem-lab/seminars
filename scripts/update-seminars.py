@@ -178,7 +178,7 @@ Click on each seminar to see more details.
     CALENDAR = calendar.HTMLCalendar().formatmonth(datetime.today().year, datetime.today().month)
 
     def to_markdown(self):
-        return self.HEADER + "".join(seminar.to_markdown() for seminar in self.seminars)
+        return self.HEADER + display(HTML(self.CALENDAR)) + "".join(seminar.to_markdown() for seminar in self.seminars)
 
     @staticmethod
     def from_github_issues(issues):
