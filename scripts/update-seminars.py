@@ -166,7 +166,13 @@ class SeminarList:
         )
 
     HEADER = "Click on each seminar to see more details."
-
+    
+    CALENDAR = calendar.month(
+        datetime.today().year, datetime.today().month
+    )
+    
+    print(CALENDAR)
+    
     BEGIN_UPCOMING_SEMINARS = """
 
 ## Upcoming Seminars
@@ -185,10 +191,6 @@ class SeminarList:
 """
 
     END_PAST_SEMINARS = ""
-
-    CALENDAR = calendar.month(
-        datetime.today().year, datetime.today().month
-    )
 
     def to_markdown(self):
         next_seminars = filter(
