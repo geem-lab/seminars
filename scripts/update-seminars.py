@@ -164,7 +164,7 @@ class SeminarList:
         self.seminars = sorted(
             self.seminars, key=lambda seminar: seminar.date, reverse=True
         )
-Testes para carboidratos
+        
     HEADER = """
     
 Click on each seminar to see more details.
