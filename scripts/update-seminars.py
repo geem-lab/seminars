@@ -173,8 +173,9 @@ Click on each seminar to see more details.
     
     CALENDAR = markdown(
         calendar.HTMLCalendar().formatmonth(
-            datetime.today().year, datetime.today().month
-        )
+            datetime.today().year, datetime.today().month).replace(
+            '>%i<'%datetime.today().day, ' bgcolor="#66ff66"><b><u>%i</u></b><'%datetime.today().day
+        )  
     )
     
         
