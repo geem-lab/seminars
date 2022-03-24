@@ -165,7 +165,11 @@ class SeminarList:
             self.seminars, key=lambda seminar: seminar.date, reverse=True
         )
 
-    HEADER = "Click on each seminar to see more details."
+    HEADER = """
+    
+Click on each seminar to see more details.
+    
+"""
     
     CALENDAR = markdown(
         calendar.HTMLCalendar().formatmonth(
@@ -202,6 +206,7 @@ class SeminarList:
         )
         return (
             self.HEADER
+            
             + self.CALENDAR
             + self.BEGIN_UPCOMING_SEMINARS
             + "".join(seminar.to_markdown() for seminar in next_seminars)
