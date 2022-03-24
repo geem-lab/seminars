@@ -1,4 +1,8 @@
-Click on each seminar to see more details.<table border="0" cellpadding="0" cellspacing="0" class="month">
+
+    
+Click on each seminar to see more details.
+    
+<table border="0" cellpadding="0" cellspacing="0" class="month">
 <tr><th colspan="7" class="month">March 2022</th></tr>
 <tr><th class="mon">Mon</th><th class="tue">Tue</th><th class="wed">Wed</th><th class="thu">Thu</th><th class="fri">Fri</th><th class="sat">Sat</th><th class="sun">Sun</th></tr>
 <tr><td class="noday">&nbsp;</td><td class="tue">1</td><td class="wed">2</td><td class="thu">3</td><td class="fri">4</td><td class="sat">5</td><td class="sun">6</td></tr>
