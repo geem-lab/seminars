@@ -164,19 +164,18 @@ class SeminarList:
         self.seminars = sorted(
             self.seminars, key=lambda seminar: seminar.date, reverse=True
         )
-
+Testes para carboidratos
     HEADER = """
     
 Click on each seminar to see more details.
     
 """
     
-    CALENDAR = markdown(
-        calendar.HTMLCalendar().formatmonth(
+    CALENDAR = calendar.HTMLCalendar().formatmonth(
             datetime.today().year, datetime.today().month).replace(
             '>%i<'%datetime.today().day, ' bgcolor="#66ff66"><b><u>%i</u></b><'%datetime.today().day
         )  
-    )
+
     
         
     BEGIN_UPCOMING_SEMINARS = """
@@ -207,7 +206,6 @@ Click on each seminar to see more details.
         )
         return (
             self.HEADER
-            
             + self.CALENDAR
             + self.BEGIN_UPCOMING_SEMINARS
             + "".join(seminar.to_markdown() for seminar in next_seminars)
