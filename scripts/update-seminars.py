@@ -199,7 +199,7 @@ class SeminarList:
         )
         return (
             self.HEADER
-            + print(self.CALENDAR)
+            + self.CALENDAR
             + self.BEGIN_UPCOMING_SEMINARS
             + "".join(seminar.to_markdown() for seminar in next_seminars)
             + self.END_UPCOMING_SEMINARS
