@@ -12,6 +12,7 @@ Click on each seminar to see more details.
 <tr><td class="mon">28</td><td class="tue">29</td><td class="wed">30</td><td class="thu">31</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td></tr>
 </table>
 
+
 ## Upcoming Seminars
 
 <details><summary><small><strong><time datetime="2022-03-28T00:00:00">📅 Mar 28 2022</time></strong></small> <em>overreact, an in silico lab: automative quantum chemical microkinetic simulations for complex chemical reactions</em> (<a href="https://github.com/schneiderfelipe">Felipe S. S. Schneider</a>)</summary><a href="https://github.com/schneiderfelipe"><img src="https://avatars.githubusercontent.com/u/37125?v=4" alt="schneiderfelipe" title="Felipe S. S. Schneider" align="left" width="128" /></a><p>This seminar introduces <a href="https://github.com/geem-lab/overreact"><strong>overreact</strong></a>, a novel Python package for propagating chemical reactions over time using data from computational chemistry only (<em>Journal of Computational Chemistry</em> <strong>2022</strong>, submitted). <strong>overreact</strong> infers all differential equations and parameters from a simple input that consists of a set of chemical equations and quantum chemistry package outputs for each chemical species.</p>
