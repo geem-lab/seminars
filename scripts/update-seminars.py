@@ -170,9 +170,7 @@ class SeminarList:
     CALENDAR = calendar.month(
         datetime.today().year, datetime.today().month
     )
-    
-    print(CALENDAR)
-    
+        
     BEGIN_UPCOMING_SEMINARS = """
 
 ## Upcoming Seminars
@@ -201,7 +199,6 @@ class SeminarList:
         )
         return (
             self.HEADER
-            + self.CALENDAR
             + self.BEGIN_UPCOMING_SEMINARS
             + "".join(seminar.to_markdown() for seminar in next_seminars)
             + self.END_UPCOMING_SEMINARS
