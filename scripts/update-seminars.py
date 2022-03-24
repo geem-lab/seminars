@@ -167,9 +167,12 @@ class SeminarList:
 
     HEADER = "Click on each seminar to see more details."
     
-    CALENDAR = calendar.month(
-        datetime.today().year, datetime.today().month
+    CALENDAR = markdown.Markdown().convert(
+        calendar.HTMLCalendar().formatmonth(
+            datetime.today().year, datetime.today().month
+        )
     )
+    
         
     BEGIN_UPCOMING_SEMINARS = """
 
@@ -199,6 +202,7 @@ class SeminarList:
         )
         return (
             self.HEADER
+            + self.CALENDAR
             + self.BEGIN_UPCOMING_SEMINARS
             + "".join(seminar.to_markdown() for seminar in next_seminars)
             + self.END_UPCOMING_SEMINARS
