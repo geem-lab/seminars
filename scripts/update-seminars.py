@@ -4,7 +4,6 @@ import calendar
 import os
 from dataclasses import dataclass
 from datetime import datetime
-
 import dateparser
 import requests
 from markdown import markdown
@@ -187,7 +186,7 @@ class SeminarList:
 
     END_PAST_SEMINARS = ""
 
-    CALENDAR = calendar.HTMLCalendar().formatmonth(
+    CALENDAR = calendar.month(
         datetime.today().year, datetime.today().month
     )
 
@@ -200,7 +199,7 @@ class SeminarList:
         )
         return (
             self.HEADER
-            + self.CALENDAR
+            + print(self.CALENDAR)
             + self.BEGIN_UPCOMING_SEMINARS
             + "".join(seminar.to_markdown() for seminar in next_seminars)
             + self.END_UPCOMING_SEMINARS
