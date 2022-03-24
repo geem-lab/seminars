@@ -167,7 +167,7 @@ class SeminarList:
 
     HEADER = "Click on each seminar to see more details."
     
-    CALENDAR = markdown.Markdown().convert(
+    CALENDAR = markdown(
         calendar.HTMLCalendar().formatmonth(
             datetime.today().year, datetime.today().month
         )
