@@ -184,7 +184,7 @@ Click on each seminar to see more details.
 ## Upcoming Seminars
 
 """
-    END_UPCOMING_SEMINARS = """<br/><br/>
+    END_UPCOMING_SEMINARS = """
 
 > Want to add *your* seminar? Check if the date of interest is available and take a look at [the instructions page](/seminars/instructions).
 
@@ -208,9 +208,9 @@ Click on each seminar to see more details.
         return (
             self.HEADER
             + self.CALENDAR
+            + self.END_UPCOMING_SEMINARS
             + self.BEGIN_UPCOMING_SEMINARS
             + "".join(seminar.to_markdown() for seminar in next_seminars)
-            + self.END_UPCOMING_SEMINARS
             + self.BEGIN_PAST_SEMINARS
             + "".join(seminar.to_markdown() for seminar in past_seminars)
             + self.END_PAST_SEMINARS
