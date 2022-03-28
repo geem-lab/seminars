@@ -15,7 +15,7 @@ Click on each seminar to see more details.
 
 ## Upcoming Seminars
 
-<details><summary><small><strong><time datetime="2022-04-04T00:00:00">📅 Apr 4 2022</time></strong></small> <em>A Alchemical Approach to estimate binding affinity in supramolecular complexes</em> (<a href="https://github.com/fabiopra" />)</summary><a href="https://github.com/fabiopra"><img src="https://avatars.githubusercontent.com/u/87502529?v=4" alt="fabiopra" title="None" align="left" width="128" /></a><p>A short description goes here if you'd like. References, links to slides, or software are most welcome!</p></details><br/>
+<details><summary><small><strong><time datetime="2022-04-04T00:00:00">📅 Apr 4 2022</time></strong></small> <em>A Alchemical Approach to estimate binding affinity in supramolecular complexes</em> (<a href="https://github.com/fabiopra">@fabiopra</a>)</summary><a href="https://github.com/fabiopra"><img src="https://avatars.githubusercontent.com/u/87502529?v=4" alt="fabiopra" title="@fabiopra" align="left" width="128" /></a><p>A short description goes here if you'd like. References, links to slides, or software are most welcome!</p></details><br/><br/>
 
 > Want to add *your* seminar? Check if the date of interest is available and take a look at [the instructions page](/seminars/instructions).
 
