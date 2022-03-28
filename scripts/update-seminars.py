@@ -163,20 +163,22 @@ class SeminarList:
         self.seminars = sorted(
             self.seminars, key=lambda seminar: seminar.date, reverse=True
         )
-        
+
     HEADER = """
     
 Click on each seminar to see more details.
     
 """
-    
-    CALENDAR = calendar.HTMLCalendar().formatmonth(
-            datetime.today().year, datetime.today().month).replace(
-            '>%i<'%datetime.today().day, ' bgcolor="#66ff66"><b><u>%i</u></b><'%datetime.today().day
-        )  
 
-    
-        
+    CALENDAR = (
+        calendar.HTMLCalendar()
+        .formatmonth(datetime.today().year, datetime.today().month)
+        .replace(
+            ">%i<" % datetime.today().day,
+            ' bgcolor="#66ff66"><b><u>%i</u></b><' % datetime.today().day,
+        )
+    )
+
     BEGIN_UPCOMING_SEMINARS = """
 
 ## Upcoming Seminars
