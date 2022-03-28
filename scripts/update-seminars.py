@@ -92,10 +92,9 @@ class Seminar:
 
     @property
     def speaker_name(self):
-        if "name" in self.speaker:
+        if "name" in self.speaker and self.speaker["name"]:
             return self.speaker["name"]
-        else:
-            return f"@{self.speaker['login']}"
+        return f"@{self.speaker['login']}"
 
     @property
     def speaker_url(self):
