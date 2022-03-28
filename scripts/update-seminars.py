@@ -182,7 +182,7 @@ Click on each seminar to see more details.
 ## Upcoming Seminars
 
 """
-    END_UPCOMING_SEMINARS = """<br/>
+    END_UPCOMING_SEMINARS = """<br/><br/>
 
 > Want to add *your* seminar? Check if the date of interest is available and take a look at [the instructions page](/seminars/instructions).
 
