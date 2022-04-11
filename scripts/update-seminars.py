@@ -1,17 +1,21 @@
 from __future__ import annotations
 
 import calendar
+import logging
 import os
 from dataclasses import dataclass
 from datetime import datetime
+
 import dateparser
 import requests
 from markdown import markdown
 
 
-def request_github_api(query_url: str, owner="geem-lab", token=None) -> dict:
+def request_github_api(
+    query_url: str, owner="geem-lab", token=None, logger=None
+) -> dict:
     if token is None:
-        token = os.environ["GITHUB_TOKEN"]
+        token = os.environ.get("GITHUB_TOKEN", None)
 
     gh_session = requests.Session()
     gh_session.auth = (owner, token)
@@ -24,7 +28,14 @@ def request_github_api(query_url: str, owner="geem-lab", token=None) -> dict:
         "Authorization": authorization,
     }
 
-    return gh_session.get(query_url, headers=headers, params=params).json()
+    response = gh_session.get(query_url, headers=headers, params=params).json()
+    if "message" in response and response["message"] == "Bad credentials":
+        raise PermissionError(
+            "Github API token is invalid. Please set the GITHUB_TOKEN environment variable."
+        )
+    if logger is not None:
+        logger.info(f"{query_url} returned:\n'{response}'")
+    return response
 
 
 def tag(tag_name):
@@ -138,7 +149,7 @@ class Seminar:
     DATE_MARKER = "**Date**:"
 
     @classmethod
-    def from_github_issue(cls, issue):
+    def from_github_issue(cls, issue, logger=None):
         title = issue["title"].replace("[SEMINAR]", "").strip()
 
         description, date = issue["body"].split(cls.DATE_MARKER)[:2]
@@ -152,7 +163,12 @@ class Seminar:
         else:
             speaker = issue["user"]["login"]
 
-        return Seminar(title=title, speaker=speaker, description=description, date=date)
+        seminar = Seminar(
+            title=title, speaker=speaker, description=description, date=date
+        )
+        if logger is not None:
+            logger.info(f"seminar: {seminar}")
+        return seminar
 
 
 @dataclass
@@ -217,9 +233,9 @@ Click on each seminar to see more details.
         )
 
     @staticmethod
-    def from_github_issues(issues):
+    def from_github_issues(issues, logger=None):
         seminars = [
-            Seminar.from_github_issue(issue)
+            Seminar.from_github_issue(issue, logger=logger)
             for issue in issues
             if issue["title"].startswith("[SEMINAR]")
         ]
@@ -227,15 +243,21 @@ Click on each seminar to see more details.
         return SeminarList(seminars)
 
     @staticmethod
-    def from_github_repo(owner, repo, token=None):
+    def from_github_repo(owner, repo, token=None, logger=None):
         issues = request_github_api(
             f"https://api.github.com/repos/{owner}/{repo}/issues",
             owner=owner,
             token=token,
+            logger=logger,
         )
-        return SeminarList.from_github_issues(issues)
+        return SeminarList.from_github_issues(issues, logger=logger)
 
 
 if __name__ == "__main__":
-    seminars = SeminarList.from_github_repo(owner="geem-lab", repo="seminars")
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
+
+    seminars = SeminarList.from_github_repo(
+        owner="geem-lab", repo="seminars", logger=logger
+    )
     print(seminars.to_markdown())

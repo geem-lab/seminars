@@ -14,6 +14,11 @@ dateparser = "^1.1.0"
 [tool.poetry.dev-dependencies]
 grip = "^4.6.0"
 black = {version = "^22.1.0", allow-prereleases = true}
+mypy = "^0.942"
+isort = "^5.10.1"
+types-dateparser = "^1.1.0"
+types-requests = "^2.27.16"
+types-Markdown = "^3.3.12"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
