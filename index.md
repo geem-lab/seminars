@@ -23,7 +23,7 @@ Click on each seminar to see more details.
 <p>References: 
 - (1) <a href="https://doi.org/10.1021/ja105035r.">Smith, S. G.; Goodman, J. M. Assigning Stereochemistry to Single Diastereoisomers by GIAO NMR Calculation: The DP4 Probability. J. Am. Chem. Soc. 2010, 132 (37), 12946–12959. </a>
 - (2) <a href="https://doi.org/10.1039/D0SC00442A.">Howarth, A.; Ermanis, K.; Goodman, J. M. DP4-AI Automated NMR Data Analysis: Straight from Spectrometer to Structure. Chem. Sci. 2020, 11 (17), 4351–4359.</a>
-- <a href="https://doi.org/10.1038/s43586-020-00001-2.">(3) van de Schoot, R.; Depaoli, S.; King, R.; Kramer, B.; Märtens, K.; Tadesse, M. G.; Vannucci, M.; Gelman, A.; Veen, D.; Willemsen, J.; Yau, C. Bayesian Statistics and Modelling. Nat Rev Methods Primers 2021, 1 (1), 1.</a></p></details>
+- (3) <a href="https://doi.org/10.1038/s43586-020-00001-2.">van de Schoot, R.; Depaoli, S.; King, R.; Kramer, B.; Märtens, K.; Tadesse, M. G.; Vannucci, M.; Gelman, A.; Veen, D.; Willemsen, J.; Yau, C. Bayesian Statistics and Modelling. Nat Rev Methods Primers 2021, 1 (1), 1.</a></p></details>
 
 ## Past Seminars
 
