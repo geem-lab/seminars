@@ -7,7 +7,7 @@ Click on each seminar to see more details.
 <tr><th class="mon">Mon</th><th class="tue">Tue</th><th class="wed">Wed</th><th class="thu">Thu</th><th class="fri">Fri</th><th class="sat">Sat</th><th class="sun">Sun</th></tr>
 <tr><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="fri">1</td><td class="sat">2</td><td class="sun">3</td></tr>
 <tr><td class="mon">4</td><td class="tue">5</td><td class="wed">6</td><td class="thu">7</td><td class="fri">8</td><td class="sat">9</td><td class="sun">10</td></tr>
-<tr><td class="mon" bgcolor="#66ff66"><b><u>11</u></b></td><td class="tue">12</td><td class="wed">13</td><td class="thu">14</td><td class="fri">15</td><td class="sat">16</td><td class="sun">17</td></tr>
+<tr><td class="mon">11</td><td class="tue">12</td><td class="wed">13</td><td class="thu">14</td><td class="fri" bgcolor="#66ff66"><b><u>15</u></b></td><td class="sat">16</td><td class="sun">17</td></tr>
 <tr><td class="mon">18</td><td class="tue">19</td><td class="wed">20</td><td class="thu">21</td><td class="fri">22</td><td class="sat">23</td><td class="sun">24</td></tr>
 <tr><td class="mon">25</td><td class="tue">26</td><td class="wed">27</td><td class="thu">28</td><td class="fri">29</td><td class="sat">30</td><td class="noday">&nbsp;</td></tr>
 </table>
@@ -19,7 +19,11 @@ Click on each seminar to see more details.
 
 ## Upcoming Seminars
 
-
+<details><summary><small><strong><time datetime="2022-04-18T00:00:00">📅 Apr 18 2022</time></strong></small> <em>Bayesian statistics, structural elucidation and the DP4 probability</em> (<a href="https://github.com/caprilesport">Vinícius C. Port</a>)</summary><a href="https://github.com/caprilesport"><img src="https://avatars.githubusercontent.com/u/59063046?v=4" alt="caprilesport" title="Vinícius C. Port" align="left" width="128" /></a><p>In this seminar the very basics of Bayesian statistics will be presented, followed by a short introduction in the challenges of structure elucidation and the DP4 probability. </p>
+<p>References: 
+- (1) <a href="https://doi.org/10.1021/ja105035r.">Smith, S. G.; Goodman, J. M. Assigning Stereochemistry to Single Diastereoisomers by GIAO NMR Calculation: The DP4 Probability. J. Am. Chem. Soc. 2010, 132 (37), 12946–12959. </a>
+- (2) <a href="https://doi.org/10.1039/D0SC00442A.">Howarth, A.; Ermanis, K.; Goodman, J. M. DP4-AI Automated NMR Data Analysis: Straight from Spectrometer to Structure. Chem. Sci. 2020, 11 (17), 4351–4359.</a>
+- <a href="https://doi.org/10.1038/s43586-020-00001-2.">(3) van de Schoot, R.; Depaoli, S.; King, R.; Kramer, B.; Märtens, K.; Tadesse, M. G.; Vannucci, M.; Gelman, A.; Veen, D.; Willemsen, J.; Yau, C. Bayesian Statistics and Modelling. Nat Rev Methods Primers 2021, 1 (1), 1.</a></p></details>
 
 ## Past Seminars
 
