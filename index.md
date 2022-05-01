@@ -20,7 +20,11 @@ Click on each seminar to see more details.
 
 ## Upcoming Seminars
 
-
+<details><summary><small><strong><time datetime="2022-05-02T00:00:00">📅 May 2 2022</time></strong></small> <em>A Brief Introduction to Single Supermolecule Electronics</em> (<a href="https://github.com/colaco-mat">@colaco-mat</a>)</summary><a href="https://github.com/colaco-mat"><img src="https://avatars.githubusercontent.com/u/101263723?v=4" alt="colaco-mat" title="@colaco-mat" align="left" width="128" /></a><p>In this seminar an introduction to Single Supermolecule Electronics (SSE) will be presented, including  some supremolecule architectures, challenges and the role of Computational Chemistry within this emerging field.</p>
+<p>Reference:</p>
+<ol>
+<li>Chen, H., Fraser Stoddart, J. From molecular to supramolecular electronics. <em>Nat Rev Mater</em> <strong>6</strong>, 804–828 (2021). https://doi.org/10.1038/s41578-021-00302-2</li>
+</ol></details>
 
 ## Past Seminars
 
