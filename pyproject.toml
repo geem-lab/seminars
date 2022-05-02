@@ -20,6 +20,7 @@ types-dateparser = "^1.1.0"
 types-requests = "^2.27.16"
 types-Markdown = "^3.3.12"
 prospector = "^1.7.7"
+flynt = "^0.76"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

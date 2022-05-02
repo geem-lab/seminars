@@ -50,12 +50,11 @@ def tag(tag_name):
 
         if attrs and contents:
             return f"<{tag_name} {attrs}>{contents}</{tag_name}>"
-        elif attrs:
+        if attrs:
             return f"<{tag_name} {attrs} />"
-        elif contents:
+        if contents:
             return f"<{tag_name}>{contents}</{tag_name}>"
-        else:
-            return f"<{tag_name} />"
+        return f"<{tag_name} />"
 
     return _tag
 
@@ -128,6 +127,7 @@ class Seminar:
                 ),
                 href=self.speaker_url,
             )
+        return None
 
     def _description_to_markdown(self):
         return markdown(self.description)
@@ -191,8 +191,8 @@ Click on each seminar to see more details.
         calendar.HTMLCalendar()
         .formatmonth(datetime.today().year, datetime.today().month)
         .replace(
-            ">%i<" % datetime.today().day,
-            ' bgcolor="#66ff66"><b><u>%i</u></b><' % datetime.today().day,
+            f">{int(datetime.today().day)}<",
+            f' bgcolor="#66ff66"><b><u>{int(datetime.today().day)}</u></b><',
         )
     )
 
