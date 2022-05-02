@@ -147,10 +147,11 @@ class Seminar:
         )
 
     DATE_MARKER = "**Date**:"
+    SEMINAR_TITLE_MARKER = "[SEMINAR]"
 
     @classmethod
     def from_github_issue(cls, issue, logger=None):
-        title = issue["title"].replace("[SEMINAR]", "").strip()
+        title = issue["title"].replace(cls.SEMINAR_TITLE_MARKER, "").strip()
 
         description, date = issue["body"].split(cls.DATE_MARKER)[:2]
         description = description.rstrip(cls.DATE_MARKER).strip()
@@ -237,7 +238,7 @@ Click on each seminar to see more details.
         seminars = [
             Seminar.from_github_issue(issue, logger=logger)
             for issue in issues
-            if issue["title"].startswith("[SEMINAR]")
+            if Seminar.SEMINAR_TITLE_MARKER in issue["title"]
         ]
 
         return SeminarList(seminars)
