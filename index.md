@@ -5,8 +5,8 @@ Click on each seminar to see more details.
 <table border="0" cellpadding="0" cellspacing="0" class="month">
 <tr><th colspan="7" class="month">May 2022</th></tr>
 <tr><th class="mon">Mon</th><th class="tue">Tue</th><th class="wed">Wed</th><th class="thu">Thu</th><th class="fri">Fri</th><th class="sat">Sat</th><th class="sun">Sun</th></tr>
-<tr><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="sun" bgcolor="#66ff66"><b><u>1</u></b></td></tr>
-<tr><td class="mon">2</td><td class="tue">3</td><td class="wed">4</td><td class="thu">5</td><td class="fri">6</td><td class="sat">7</td><td class="sun">8</td></tr>
+<tr><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="sun">1</td></tr>
+<tr><td class="mon" bgcolor="#66ff66"><b><u>2</u></b></td><td class="tue">3</td><td class="wed">4</td><td class="thu">5</td><td class="fri">6</td><td class="sat">7</td><td class="sun">8</td></tr>
 <tr><td class="mon">9</td><td class="tue">10</td><td class="wed">11</td><td class="thu">12</td><td class="fri">13</td><td class="sat">14</td><td class="sun">15</td></tr>
 <tr><td class="mon">16</td><td class="tue">17</td><td class="wed">18</td><td class="thu">19</td><td class="fri">20</td><td class="sat">21</td><td class="sun">22</td></tr>
 <tr><td class="mon">23</td><td class="tue">24</td><td class="wed">25</td><td class="thu">26</td><td class="fri">27</td><td class="sat">28</td><td class="sun">29</td></tr>
@@ -20,15 +20,15 @@ Click on each seminar to see more details.
 
 ## Upcoming Seminars
 
+
+
+## Past Seminars
+
 <details><summary><small><strong><time datetime="2022-05-02T00:00:00">📅 May 2 2022</time></strong></small> <em>A Brief Introduction to Single Supermolecule Electronics</em> (<a href="https://github.com/colaco-mat">@colaco-mat</a>)</summary><a href="https://github.com/colaco-mat"><img src="https://avatars.githubusercontent.com/u/101263723?v=4" alt="colaco-mat" title="@colaco-mat" align="left" width="128" /></a><p>In this seminar an introduction to Single Supermolecule Electronics (SSE) will be presented, including  some supremolecule architectures, challenges and the role of Computational Chemistry within this emerging field.</p>
 <p>Reference:</p>
 <ol>
 <li>Chen, H., Fraser Stoddart, J. From molecular to supramolecular electronics. <em>Nat Rev Mater</em> <strong>6</strong>, 804–828 (2021). https://doi.org/10.1038/s41578-021-00302-2</li>
-</ol></details>
-
-## Past Seminars
-
-<details><summary><small><strong><time datetime="2022-04-25T00:00:00">📅 Apr 25 2022</time></strong></small> <em>Bayesian statistics, structural elucidation and the DP4 probability</em> (<a href="https://github.com/caprilesport">Vinícius C. Port</a>)</summary><a href="https://github.com/caprilesport"><img src="https://avatars.githubusercontent.com/u/59063046?v=4" alt="caprilesport" title="Vinícius C. Port" align="left" width="128" /></a><p>In this seminar the very basics of Bayesian statistics will be presented, followed by a short introduction in the challenges of structure elucidation and the DP4 probability. </p>
+</ol></details><details><summary><small><strong><time datetime="2022-04-25T00:00:00">📅 Apr 25 2022</time></strong></small> <em>Bayesian statistics, structural elucidation and the DP4 probability</em> (<a href="https://github.com/caprilesport">Vinícius C. Port</a>)</summary><a href="https://github.com/caprilesport"><img src="https://avatars.githubusercontent.com/u/59063046?v=4" alt="caprilesport" title="Vinícius C. Port" align="left" width="128" /></a><p>In this seminar the very basics of Bayesian statistics will be presented, followed by a short introduction in the challenges of structure elucidation and the DP4 probability. </p>
 <p>References: 
 - (1) <a href="https://doi.org/10.1021/ja105035r.">Smith, S. G.; Goodman, J. M. Assigning Stereochemistry to Single Diastereoisomers by GIAO NMR Calculation: The DP4 Probability. J. Am. Chem. Soc. 2010, 132 (37), 12946–12959. </a>
 - (2) <a href="https://doi.org/10.1039/D0SC00442A.">Howarth, A.; Ermanis, K.; Goodman, J. M. DP4-AI Automated NMR Data Analysis: Straight from Spectrometer to Structure. Chem. Sci. 2020, 11 (17), 4351–4359.</a>
