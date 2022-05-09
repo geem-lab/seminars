@@ -6,8 +6,8 @@ Click on each seminar to see more details.
 <tr><th colspan="7" class="month">May 2022</th></tr>
 <tr><th class="mon">Mon</th><th class="tue">Tue</th><th class="wed">Wed</th><th class="thu">Thu</th><th class="fri">Fri</th><th class="sat">Sat</th><th class="sun">Sun</th></tr>
 <tr><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="sun">1</td></tr>
-<tr><td class="mon" bgcolor="#66ff66"><b><u>2</u></b></td><td class="tue">3</td><td class="wed">4</td><td class="thu">5</td><td class="fri">6</td><td class="sat">7</td><td class="sun">8</td></tr>
-<tr><td class="mon">9</td><td class="tue">10</td><td class="wed">11</td><td class="thu">12</td><td class="fri">13</td><td class="sat">14</td><td class="sun">15</td></tr>
+<tr><td class="mon">2</td><td class="tue">3</td><td class="wed">4</td><td class="thu">5</td><td class="fri">6</td><td class="sat">7</td><td class="sun">8</td></tr>
+<tr><td class="mon" bgcolor="#66ff66"><b><u>9</u></b></td><td class="tue">10</td><td class="wed">11</td><td class="thu">12</td><td class="fri">13</td><td class="sat">14</td><td class="sun">15</td></tr>
 <tr><td class="mon">16</td><td class="tue">17</td><td class="wed">18</td><td class="thu">19</td><td class="fri">20</td><td class="sat">21</td><td class="sun">22</td></tr>
 <tr><td class="mon">23</td><td class="tue">24</td><td class="wed">25</td><td class="thu">26</td><td class="fri">27</td><td class="sat">28</td><td class="sun">29</td></tr>
 <tr><td class="mon">30</td><td class="tue">31</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td></tr>
@@ -24,7 +24,7 @@ Click on each seminar to see more details.
 
 ## Past Seminars
 
-<details><summary><small><strong><time datetime="2022-05-02T00:00:00">📅 May 2 2022</time></strong></small> <em>A Brief Introduction to Single Supermolecule Electronics</em> (<a href="https://github.com/colaco-mat">@colaco-mat</a>)</summary><a href="https://github.com/colaco-mat"><img src="https://avatars.githubusercontent.com/u/101263723?v=4" alt="colaco-mat" title="@colaco-mat" align="left" width="128" /></a><p>In this seminar an introduction to Single Supermolecule Electronics (SSE) will be presented, including  some supremolecule architectures, challenges and the role of Computational Chemistry within this emerging field.</p>
+<details><summary><small><strong><time datetime="2022-05-09T00:00:00">📅 May 9 2022</time></strong></small> <em>Transition state search and microkinetic simulations: a tiny workshop on using overreact</em> (<a href="https://github.com/schneiderfelipe">Felipe S. S. Schneider</a>)</summary><a href="https://github.com/schneiderfelipe"><img src="https://avatars.githubusercontent.com/u/37125?v=4" alt="schneiderfelipe" title="Felipe S. S. Schneider" align="left" width="128" /></a><p>We'll talk a bit about transition state searches and the usage of overreact for exploring reaction space.</p></details><details><summary><small><strong><time datetime="2022-05-02T00:00:00">📅 May 2 2022</time></strong></small> <em>A Brief Introduction to Single Supermolecule Electronics</em> (<a href="https://github.com/colaco-mat">@colaco-mat</a>)</summary><a href="https://github.com/colaco-mat"><img src="https://avatars.githubusercontent.com/u/101263723?v=4" alt="colaco-mat" title="@colaco-mat" align="left" width="128" /></a><p>In this seminar an introduction to Single Supermolecule Electronics (SSE) will be presented, including  some supremolecule architectures, challenges and the role of Computational Chemistry within this emerging field.</p>
 <p>Reference:</p>
 <ol>
 <li>Chen, H., Fraser Stoddart, J. From molecular to supramolecular electronics. <em>Nat Rev Mater</em> <strong>6</strong>, 804–828 (2021). https://doi.org/10.1038/s41578-021-00302-2</li>
