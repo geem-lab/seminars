@@ -3,14 +3,13 @@
 Click on each seminar to see more details.
     
 <table border="0" cellpadding="0" cellspacing="0" class="month">
-<tr><th colspan="7" class="month">May 2022</th></tr>
+<tr><th colspan="7" class="month">June 2022</th></tr>
 <tr><th class="mon">Mon</th><th class="tue">Tue</th><th class="wed">Wed</th><th class="thu">Thu</th><th class="fri">Fri</th><th class="sat">Sat</th><th class="sun">Sun</th></tr>
-<tr><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="sun">1</td></tr>
-<tr><td class="mon">2</td><td class="tue">3</td><td class="wed">4</td><td class="thu">5</td><td class="fri">6</td><td class="sat">7</td><td class="sun">8</td></tr>
-<tr><td class="mon" bgcolor="#66ff66"><b><u>9</u></b></td><td class="tue">10</td><td class="wed">11</td><td class="thu">12</td><td class="fri">13</td><td class="sat">14</td><td class="sun">15</td></tr>
-<tr><td class="mon">16</td><td class="tue">17</td><td class="wed">18</td><td class="thu">19</td><td class="fri">20</td><td class="sat">21</td><td class="sun">22</td></tr>
-<tr><td class="mon">23</td><td class="tue">24</td><td class="wed">25</td><td class="thu">26</td><td class="fri">27</td><td class="sat">28</td><td class="sun">29</td></tr>
-<tr><td class="mon">30</td><td class="tue">31</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td></tr>
+<tr><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="wed">1</td><td class="thu">2</td><td class="fri">3</td><td class="sat">4</td><td class="sun">5</td></tr>
+<tr><td class="mon">6</td><td class="tue">7</td><td class="wed">8</td><td class="thu">9</td><td class="fri">10</td><td class="sat" bgcolor="#66ff66"><b><u>11</u></b></td><td class="sun">12</td></tr>
+<tr><td class="mon">13</td><td class="tue">14</td><td class="wed">15</td><td class="thu">16</td><td class="fri">17</td><td class="sat">18</td><td class="sun">19</td></tr>
+<tr><td class="mon">20</td><td class="tue">21</td><td class="wed">22</td><td class="thu">23</td><td class="fri">24</td><td class="sat">25</td><td class="sun">26</td></tr>
+<tr><td class="mon">27</td><td class="tue">28</td><td class="wed">29</td><td class="thu">30</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td><td class="noday">&nbsp;</td></tr>
 </table>
 
 
@@ -20,7 +19,11 @@ Click on each seminar to see more details.
 
 ## Upcoming Seminars
 
-
+<details><summary><small><strong><time datetime="2022-06-13T00:00:00">📅 Jun 13 2022</time></strong></small> <em>Basics of git and github</em> (<a href="https://github.com/caprilesport">Vinícius C. Port</a>)</summary><a href="https://github.com/caprilesport"><img src="https://avatars.githubusercontent.com/u/59063046?v=4" alt="caprilesport" title="Vinícius C. Port" align="left" width="128" /></a><p>In this seminars a very introductory explanation will be given about what is git (and github), how it works, the basic usage and some applications for our day-to-day work.</p>
+<p>Useful links: </p>
+<p><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Git manual</a></p>
+<p><a href="https://www.atlassian.com/git/tutorials/source-code-management">What is source code management</a></p>
+<p><a href="https://www.freecodecamp.org/news/git-internals-objects-branches-create-repo/">An introduction to the internals of git</a></p></details>
 
 ## Past Seminars
 
