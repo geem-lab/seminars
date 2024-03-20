@@ -13,7 +13,7 @@ dateparser = "^1.1.0"
 
 [tool.poetry.dev-dependencies]
 grip = "^4.6.0"
-black = {version = "^22.1.0", allow-prereleases = true}
+black = {version = "^24.3.0", allow-prereleases = true}
 mypy = "^0.942"
 isort = "^5.10.1"
 types-dateparser = "^1.1.0"
